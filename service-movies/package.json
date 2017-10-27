@@ -8,6 +8,9 @@
     },
     "author": "",
     "license": "ISC",
+    "scripts": {
+        "start": "node index.js"
+    },
     "devDependencies": {
         "eslint": "^3.13.1",
         "mocha": "^3.2.0",
