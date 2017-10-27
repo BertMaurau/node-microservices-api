@@ -30,8 +30,8 @@ const repository = () => {
             const currentDay = new Date()
             const query = "SELECT * FROM movies WHERE " +
                 "releaseYear > " + (currentDay.getFullYear() - 1) + " AND releaseYear <= " + (currentDay.getFullYear()) +
-                "releaseMonth >= " + (currentDay.getMonth() + 1) + " AND releaseMonth <= " + (currentDay.getMonth() + 2) +
-                "releaseDay <= " + (currentDay.getDate());
+                " AND releaseMonth >= " + (currentDay.getMonth() + 1) + " AND releaseMonth <= " + (currentDay.getMonth() + 2) +
+                " AND releaseDay <= " + (currentDay.getDate());
 
             connection.query(query, function(error, results, fields) {
                 if (error) reject(new Error('An error occured fetching all movies, err:' + err));
