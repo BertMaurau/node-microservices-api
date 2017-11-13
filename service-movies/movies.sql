@@ -33,7 +33,12 @@ CREATE TABLE `movies` (
 
 /*Data for the table `movies` */
  
-insert  into `movies`(`id`,`title`,`runtime`,`format`,`plot`,`releaseYear`,`releaseMonth`,`releaseDay`) values (1,'Assasins Creed',115,'IMAX','Lorem ipsum dolor sit amet',127,1,6),(2,'Aliados',124,'IMAX','Lorem ipsum dolor sit amet',127,1,13),(3,'xXx: Reactivado',107,'IMAX','Lorem ipsum dolor sit amet',127,1,20),(4,'Resident Evil: Capitulo Final',107,'IMAX','Lorem ipsum dolor sit amet',127,1,27),(5,'Moana: Un Mar de Aventuras',114,'IMAX','Lorem ipsum dolor sit amet',127,12,2);
+insert  into `movies`(`id`,`title`,`runtime`,`format`,`plot`,`releaseYear`,`releaseMonth`,`releaseDay`) values 
+  (1,'Assasins Creed',115,'IMAX','Lorem ipsum dolor sit amet',127,1,6),
+  (2,'Aliados',124,'IMAX','Lorem ipsum dolor sit amet',127,1,13),
+  (3,'xXx: Reactivado',107,'IMAX','Lorem ipsum dolor sit amet',127,1,20),
+  (4,'Resident Evil: Capitulo Final',107,'IMAX','Lorem ipsum dolor sit amet',127,1,27),
+  (5,'Moana: Un Mar de Aventuras',114,'IMAX','Lorem ipsum dolor sit amet',127,12,2);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
