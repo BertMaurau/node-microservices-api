@@ -10,7 +10,7 @@ const dbSettings = {
 // Server parameters
 // - Gets used in index.s
 const serverSettings = {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3002,
     ssl: require('./ssl')
 }
 
