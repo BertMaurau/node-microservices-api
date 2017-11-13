@@ -27,6 +27,7 @@ repository.connect()
     console.log('Repository Connected. Starting Server')
     return server.start({
         port: config.serverSettings.port,
+        ssl: config.serverSettings.ssl,
         repo
     })
 })
