@@ -18,7 +18,7 @@ const repository = () => {
             const query = "SELECT * FROM cinemas " + ((zip) ? "WHERE zip = '" + zip + "'" : "");
 
             connection.query(query, function(error, results, fields) {
-                if (error) reject(new Error('An error occured fetching all cinemas, err:' + err));
+                if (error) reject(new Error('An error occured fetching all cinemas, err:' + error));
                 resolve(results)
             });
         });
@@ -30,8 +30,21 @@ const repository = () => {
             const query = "SELECT * FROM cinemas WHERE id = " + cinemaId;
 
             connection.query(query, function(error, results, fields) {
-                if (error) reject(new Error('An error occured fetching movie by id, err:' + err));
+                if (error) reject(new Error('An error occured fetching cinema by id, err:' + error));
                 resolve(results[0]);
+            });
+        });
+    }
+
+    const getCinemaSchedule = (cinemaId) => {
+
+        return new Promise((resolve, reject) => {
+
+            const query = "SELECT * FROM cinemas_schedule WHERE cinema_id = " + cinemaId + ";";
+
+            connection.query(query, function(error, results, fields) {
+                if (error) reject(new Error('An error occured fetching schedules, err:' + error));
+                resolve(results);
             });
         });
     }
@@ -40,24 +53,35 @@ const repository = () => {
 
         return new Promise((resolve, reject) => {
 
-            const query = "SELECT cinemas_schedule.* FROM cinemas_schedule " +
-                "LEFT JOIN cinemas ON cinemas.id = cinemas_schedule.cinema_id " +
-                "WHERE cinemas_schedule.movie_id = " + options.movieId + " AND cinemas.zip = '" + options.zip + "';";
+            const query = "SELECT * FROM cinemas_schedule WHERE movie_id = " + options.movieId + " AND cinema_id = " + options.cinemaId + ";";
 
             connection.query(query, function(error, results, fields) {
-                if (error) reject(new Error('An error occured fetching movie by id, err:' + err));
+                if (error) reject(new Error('An error occured fetching schedules, err:' + error));
                 resolve(results);
             });
         });
     }
 
-    const getRoomsForCinema = (cinemaId) => {
+    const getCinemaRoomById = (options) => {
+
+        return new Promise((resolve, reject) => {
+
+            const query = "SELECT * FROM cinemas_rooms WHERE id = " + options.roomId + " AND cinema_id = " + options.cinemaId + ";";
+
+            connection.query(query, function(error, results, fields) {
+                if (error) reject(new Error('An error occured fetching room by id, err:' + error));
+                resolve(results);
+            });
+        });
+    }
+
+    const getCinemaRooms = (cinemaId) => {
         return new Promise((resolve, reject) => {
 
             const query = "SELECT * FROM cinemas_rooms WHERE cinema_id = " + cinemaId;
 
             connection.query(query, function(error, results, fields) {
-                if (error) reject(new Error('An error occured fetching movie by id, err:' + err));
+                if (error) reject(new Error('An error occured fetching rooms for ciname, err:' + error));
                 resolve(results);
             });
         });
@@ -66,8 +90,10 @@ const repository = () => {
     return {
         getAllCinemas,
         getCinemaById,
+        getCinemaSchedule,
         getCinemaScheduleByMovie,
-        getRoomsForCinema
+        getCinemaRooms,
+        getCinemaRoomById
     }
 }
 
