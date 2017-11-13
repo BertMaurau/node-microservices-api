@@ -20,14 +20,30 @@ module.exports = (app, options) => {
     })
 
     app.get('/cinemas/:cinemaId/rooms', (req, res, next) => {
-        repo.getRoomsForCinema(req.params.cinemaId).then(cinema => {
+        repo.getCinemaRooms(req.params.cinemaId).then(cinema => {
             res.status(status.OK).json(cinema)
         }).catch(next)
     })
 
-    app.get('/cinemas/:zip/:movieId', (req, res, next) => {
+    app.get('/cinemas/:cinemaId/rooms/:roomId', (req, res, next) => {
         const params = {
-            zip: req.params.zip,
+            cinemaId: req.params.cinemaId,
+            roomId: req.params.roomId
+        }
+        repo.getCinemaRoomById(params).then(cinemas => {
+            res.status(status.OK).json(cinemas)
+        }).catch(next)
+    })
+
+    app.get('/cinemas/:cinemaId/movies', (req, res, next) => {
+        repo.getCinemaSchedule(req.params.cinemaId).then(cinemas => {
+            res.status(status.OK).json(cinemas)
+        }).catch(next)
+    })
+
+    app.get('/cinemas/:cinemaId/movies/:movieId', (req, res, next) => {
+        const params = {
+            cinemaId: req.params.cinemaId,
             movieId: req.params.movieId
         }
         repo.getCinemaScheduleByMovie(params).then(cinemas => {
