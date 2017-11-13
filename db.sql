@@ -64,6 +64,24 @@ CREATE TABLE `cinemas_schedule` (
 
 insert  into `cinemas_schedule`(`id`,`cinema_id`,`room_id`,`movie_id`,`time`,`price`) values (1,1,1,1,'12:30',8),(2,1,3,2,'17:45',10),(3,2,2,1,'20:00',8),(4,3,1,4,'15:30',5),(5,3,1,2,'21:00',7),(6,1,2,1,'13:30',8);
 
+/*Table structure for table `movies` */
+
+DROP TABLE IF EXISTS `movies`;
+
+CREATE TABLE `movies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) DEFAULT NULL,
+  `runtime` int(11) DEFAULT NULL,
+  `format` varchar(28) DEFAULT NULL,
+  `plot` varchar(255) DEFAULT NULL,
+  `releaseDate` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `movies` */
+
+insert  into `movies`(`id`,`title`,`runtime`,`format`,`plot`,`releaseDate`) values (1,'Battle of the Sexes',115,'IMAX','Lorem ipsum dolor sit amet','2017-10-01'),(2,'Vele Hemels',124,'IMAX','Lorem ipsum dolor sit amet','2017-10-25'),(3,'The Foreigner',107,'IMAX','Lorem ipsum dolor sit amet','2017-11-11'),(4,'Weg van Jou',107,'IMAX','Lorem ipsum dolor sit amet','2017-11-28'),(5,'Jigsaw',114,'IMAX','Lorem ipsum dolor sit amet','2017-12-31');
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
