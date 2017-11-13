@@ -25,20 +25,19 @@ CREATE TABLE `movies` (
   `runtime` int(11) DEFAULT NULL,
   `format` varchar(28) DEFAULT NULL,
   `plot` varchar(255) DEFAULT NULL,
-  `releaseYear` tinyint(4) DEFAULT NULL,
-  `releaseMonth` tinyint(2) DEFAULT NULL,
-  `releaseDay` tinyint(2) DEFAULT NULL,
+  `releaseDate` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `movies` */
+
+INSERT INTO `movies` (`id`, `title`, `runtime`, `format`, `plot`, `releaseDate`) VALUES
+  ('1','Battle of the Sexes','115','IMAX','Lorem ipsum dolor sit amet','2017-10-01'),
+  ('2','Vele Hemels','124','IMAX','Lorem ipsum dolor sit amet','2017-10-25'),
+  ('3','The Foreigner','107','IMAX','Lorem ipsum dolor sit amet','2017-11-11'),
+  ('4','Weg van Jou','107','IMAX','Lorem ipsum dolor sit amet','2017-11-28'),
+  ('5','Jigsaw','114','IMAX','Lorem ipsum dolor sit amet','2017-12-31');
  
-insert  into `movies`(`id`,`title`,`runtime`,`format`,`plot`,`releaseYear`,`releaseMonth`,`releaseDay`) values 
-  (1,'Assasins Creed',115,'IMAX','Lorem ipsum dolor sit amet',127,1,6),
-  (2,'Aliados',124,'IMAX','Lorem ipsum dolor sit amet',127,1,13),
-  (3,'xXx: Reactivado',107,'IMAX','Lorem ipsum dolor sit amet',127,1,20),
-  (4,'Resident Evil: Capitulo Final',107,'IMAX','Lorem ipsum dolor sit amet',127,1,27),
-  (5,'Moana: Un Mar de Aventuras',114,'IMAX','Lorem ipsum dolor sit amet',127,12,2);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
