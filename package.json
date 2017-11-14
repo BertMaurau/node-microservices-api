@@ -6,7 +6,7 @@
     "scripts": {
         "service-movies": "npm --prefix service-movies/ start",
         "service-cinemas": "npm --prefix service-cinemas/ start",
-        "dev": "concurrently --kill-others \"npm run service-movies\" \"npm run service-cinemas\"",
+        "dev": "concurrently --kill-others \"npm run service-customers\" \"npm run service-products\" \"npm run service-notifications\" \"npm run service-sales\"",
         "start": "npm run dev"
     },
     "author": "",
