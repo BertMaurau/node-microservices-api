@@ -4,8 +4,10 @@
     "description": "Microservice API",
     "main": "index.js",
     "scripts": {
-        "service-movies": "npm --prefix service-movies/ start",
-        "service-cinemas": "npm --prefix service-cinemas/ start",
+        "service-customers": "npm --prefix service-customers/ start",
+        "service-products": "npm --prefix service-products/ start",
+        "service-notifications": "npm --prefix service-notifications/ start",
+        "service-sales": "npm --prefix service-sales/ start",
         "dev": "concurrently --kill-others \"npm run service-customers\" \"npm run service-products\" \"npm run service-notifications\" \"npm run service-sales\"",
         "start": "npm run dev"
     },
