@@ -8,15 +8,42 @@ const salesProxy = proxy('/sales', { logLevel: "debug", target: 'https://localho
 
 const app = express()
 
+// Function that gets called before each request
+function middelwareValidation() {
+
+    // Check headers, validate oAuth, logging,...
+    return true;
+}
+
+// Index
 app.get('/', function(req, res) {
     res.send('API says Hello!');
 })
 
+// Other route sthat don't need authentication..
+// ..
+
+// Assign the Middleware
+app.use(function(req, res, next) {
+
+    if (middelwareValidation()) {
+
+        // Allowed.. continue the router
+        next();
+    } else {
+
+        // End request here
+        res.send("Failed to Validate");
+    }
+})
+
+// Services forwarding
 app.use(customersProxy)
 app.use(productsProxy)
 app.use(ticketsProxy)
 app.use(salesProxy)
 
+// Start server
 app.listen(3000, function() {
     console.log("API listening on %s", 3000)
 })
