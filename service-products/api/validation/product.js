@@ -10,4 +10,11 @@ const product = {
     }
 }
 
-module.exports = Object.assign({}, { product });
+const lower_stock = {
+    body: {
+        quantity: Joi.number().required()
+    }
+}
+
+
+module.exports = Object.assign({}, { product, lower_stock });

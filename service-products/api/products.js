@@ -49,4 +49,11 @@ module.exports = (app, options) => {
             res.status(status.OK).json(product)
         }).catch(next)
     })
+
+    // Lower the stock value
+    app.post('/products/barcode/:barcode/lower_stock', validate(validation.lower_stock), (req, res, next) => {
+        repo.lowerStock(req.params.barcode, req.body).then(product => {
+            res.status(status.OK).json(product)
+        }).catch(next)
+    })
 }

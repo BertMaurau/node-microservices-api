@@ -113,13 +113,30 @@ const repository = () => {
             });
         });
     }
+
+    const lowerStock = (barcode, lower_stock) => {
+        return new Promise((resolve, reject) => {
+
+            const query = "UPDATE products_sizes SET stock = stock - ? WHERE barcode = ?;";
+
+            connection.query(query, [lower_stock.quantity, barcode], function(err, result) {
+                if (err) reject(new Error('An error occured while updating Stock for product ' + barcode + '. Error:' + err));
+
+                // Set the ID and return the Product
+                resolve(lower_stock.quantity);
+            });
+        });
+    }
+
+
     return {
         getProducts,
         getProductById,
         createProduct,
         getSizesByProductId,
         getSizeById,
-        getProductByBarcode
+        getProductByBarcode,
+        lowerStock
     }
 }
 
