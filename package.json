@@ -6,9 +6,9 @@
     "scripts": {
         "service-customers": "npm --prefix service-customers/ start",
         "service-products": "npm --prefix service-products/ start",
-        "service-notifications": "npm --prefix service-notifications/ start",
+        "service-tickets": "npm --prefix service-tickets/ start",
         "service-sales": "npm --prefix service-sales/ start",
-        "dev": "concurrently --kill-others \"npm run service-customers\" \"npm run service-products\" \"npm run service-notifications\" \"npm run service-sales\"",
+        "dev": "concurrently --kill-others \"npm run service-customers\" \"npm run service-products\" \"npm run service-tickets\" \"npm run service-sales\"",
         "start": "npm run dev"
     },
     "author": "",
