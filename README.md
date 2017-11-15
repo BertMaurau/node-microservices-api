@@ -66,7 +66,7 @@ Example screen of every service running and registering a new Sale
 
    POST http://localhost:3002/products/barcode/{barcode}/lower_stock
 
-    ```json
+   ```json
    {
       "quantity": 1
    }
