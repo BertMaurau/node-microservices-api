@@ -28,4 +28,11 @@ module.exports = (app, options) => {
             res.status(status.OK).json(customer)
         }).catch(next)
     })
+
+    // Update Customer loyalty
+    app.post('/customers/:id/update_loyalty', validate(validation.loyalty), (req, res, next) => {
+        repo.updateLoyalty(req.params.id, req.body).then(customer => {
+            res.status(status.OK).json(customer)
+        }).catch(next)
+    })
 }

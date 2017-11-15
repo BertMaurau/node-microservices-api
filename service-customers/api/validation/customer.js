@@ -7,4 +7,10 @@ const customer = {
     }
 }
 
-module.exports = Object.assign({}, { customer });
+const loyalty = {
+    body: {
+        total_sales_price: Joi.number()
+    }
+}
+
+module.exports = Object.assign({}, { customer, loyalty });
