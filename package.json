@@ -8,7 +8,7 @@
         "service-products": "npm --prefix service-products/ start",
         "service-tickets": "npm --prefix service-tickets/ start",
         "service-sales": "npm --prefix service-sales/ start",
-        "dev": "concurrently --kill-others \"npm run service-customers\" \"npm run service-products\" \"npm run service-tickets\" \"npm run service-sales\"",
+        "dev": "concurrently --kill-others \"node api\" \"npm run service-customers\" \"npm run service-products\" \"npm run service-tickets\" \"npm run service-sales\"",
         "start": "npm run dev"
     },
     "author": "",
@@ -16,5 +16,8 @@
     "devDependencies": {
         "concurrently": "^3.5.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "express": "^4.16.2",
+        "http-proxy-middleware": "^0.17.4"
+    }
 }
