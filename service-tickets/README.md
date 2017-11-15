@@ -14,6 +14,8 @@ Tickets Service API
 
 ## Requests
 
+   GET http://localhost:3003/tickets/{id}
+
    POST http://localhost:3003/tickets
 
    ```json

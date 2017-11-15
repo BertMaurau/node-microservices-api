@@ -14,4 +14,12 @@ module.exports = (app, options) => {
             res.status(status.OK).json(ticket)
         }).catch(next)
     })
+
+    // Get ticket by ID
+    app.get('/tickets/:id', (req, res, next) => {
+        repo.getTicketById(req.params.id).then(ticket => {
+            ticket.body = ticket.body.toString('utf-8')
+            res.status(status.OK).json(ticket)
+        }).catch(next)
+    })
 }

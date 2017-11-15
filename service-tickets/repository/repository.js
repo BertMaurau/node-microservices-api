@@ -26,8 +26,22 @@ const repository = () => {
             });
         });
     }
+
+    const getTicketById = (ticketId) => {
+        return new Promise((resolve, reject) => {
+
+            const query = "SELECT tickets.* FROM tickets WHERE id = ? LIMIT 1;";
+
+            connection.query(query, [ticketId], function(err, results, fields) {
+                if (err) reject(new Error('An error occured while fetching Ticket ' + ticketId + '. Error:' + err));
+                resolve(results[0]);
+            });
+        });
+    }
+
     return {
-        createTicket
+        createTicket,
+        getTicketById
     }
 }
 
