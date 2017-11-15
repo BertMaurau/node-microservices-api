@@ -18,6 +18,12 @@ run "npm start" in the main "/" directory.
 
 This will start both the services on their own port number (can be changed in each config file).
 
+
+Example screen of every service running and registering a new Sale
+
+![Screen](https://github.com/BertMaurau/node-microservices-api/blob/master/console.png)
+
+
 ## Requests
 
    GET http://localhost:3001/customers       (Params: name, email)   
