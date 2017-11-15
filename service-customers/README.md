@@ -25,3 +25,11 @@ Customer Service API
       "email": "post.user@outlook.com"
    }
    ```
+
+   POST http://localhost:3001/customers/{id}/update_loyalty  
+
+   ```json
+   {
+      "total_sales_price": 150
+   }
+   ```
