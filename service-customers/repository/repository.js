@@ -80,10 +80,28 @@ const repository = () => {
             });
         });
     }
+
+    const updateLoyalty = (customerId, loyalty) => {
+        return new Promise((resolve, reject) => {
+
+            const query = "UPDATE customers SET loyalty_discount = loyalty_discount + ? WHERE id = ?;";
+
+            let percentage = (loyalty.total_sales_price / 100) * 5;
+
+            connection.query(query, [percentage, customerId], function(err, result) {
+                if (err) reject(new Error('An error occured while updating Customer ' + customerId + '. Error:' + err));
+
+                // Set the ID and return the customer
+                resolve(percentage);
+            });
+        });
+    }
+
     return {
         getCustomers,
         getCustomerById,
-        createCustomer
+        createCustomer,
+        updateLoyalty
     }
 }
 
