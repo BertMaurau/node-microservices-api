@@ -14,13 +14,13 @@ Products Service API
 
 ## Requests
 
-   GET http://localhost:3001/products       (Params: name, season, brand, color)   
-   GET http://localhost:3001/products/{id}  
-   GET http://localhost:3001/products/{id}/sizes  
-   GET http://localhost:3001/products/{id}/sizes/{id}  
-   GET http://localhost:3001/products/barcode/{barcode}    
+   GET http://localhost:3002/products       (Params: name, season, brand, color)   
+   GET http://localhost:3002/products/{id}  
+   GET http://localhost:3002/products/{id}/sizes  
+   GET http://localhost:3002/products/{id}/sizes/{id}  
+   GET http://localhost:3002/products/barcode/{barcode}    
 
-   POST http://localhost:3001/products  
+   POST http://localhost:3002/products  
 
    ```json
    {
@@ -29,5 +29,13 @@ Products Service API
       "brand": "Bic",
       "color": "Yellow",
       "price": 5
+   }
+   ```
+
+   POST http://localhost:3002/products/barcode/{barcode}/lower_stock
+
+    ```json
+   {
+      "quantity": 1
    }
    ```
