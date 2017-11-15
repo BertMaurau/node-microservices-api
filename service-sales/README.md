@@ -29,3 +29,10 @@ Sales Service API
          }]
    }
    ```
+
+   This wil:
+
+    - Update the Customer Loyalty Discount (Customer Service)
+    - Lower the Stock Values of the given Barcodes (Products Service)
+    - Register a new Sale (Sales Service)
+    - Create a new Ticket from registered Sale (Tickets Service)
