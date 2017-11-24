@@ -182,7 +182,7 @@ Example screen of every service running and registering a new Sale
    }
    ```
 
-   This wil:
+   This will:
 
     - Update the Customer Loyalty Discount (Customer Service)
     - Lower the Stock Values of the given Barcodes (Products Service)
