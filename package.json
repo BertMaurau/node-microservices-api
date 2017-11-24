@@ -1,23 +1,27 @@
 {
-    "name": "microservice-api",
-    "version": "1.0.0",
-    "description": "Microservice API",
-    "main": "index.js",
-    "scripts": {
-        "service-customers": "npm --prefix service-customers/ start",
-        "service-products": "npm --prefix service-products/ start",
-        "service-tickets": "npm --prefix service-tickets/ start",
-        "service-sales": "npm --prefix service-sales/ start",
-        "dev": "concurrently --kill-others \"node api\" \"npm run service-customers\" \"npm run service-products\" \"npm run service-tickets\" \"npm run service-sales\"",
-        "start": "npm run dev"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "concurrently": "^3.5.0"
-    },
-    "dependencies": {
-        "express": "^4.16.2",
-        "http-proxy-middleware": "^0.17.4"
-    }
+  "name": "microservice-api",
+  "version": "1.0.0",
+  "description": "Microservice API",
+  "main": "index.js",
+  "scripts": {
+    "service-customers": "npm --prefix service-customers/ start",
+    "service-products": "npm --prefix service-products/ start",
+    "service-tickets": "npm --prefix service-tickets/ start",
+    "service-sales": "npm --prefix service-sales/ start",
+    "dev": "concurrently --kill-others \"node api\" \"npm run service-customers\" \"npm run service-products\" \"npm run service-tickets\" \"npm run service-sales\"",
+    "start": "npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "http-proxy-middleware": "^0.17.4",
+    "mongoose": "^4.13.4",
+    "node-oauth2-server": "^2.4.0",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0"
+  }
 }
